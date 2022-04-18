@@ -49,11 +49,12 @@ function getMostPopularBooks(books) {
   return topFive(mostPopBooks); 
 }
 
-// 6.Get Most Popular Authors - done using .forEach(), temperal literals, single line if statments & helper function*
+// 6.Get Most Popular Authors - done using .forEach(), destructuring objects, temperal literals, single line if statments & helper function*
 function getMostPopularAuthors(books, authors) {
   var mostPopAuth = [];
     authors.forEach((author) => {
-      let theAuthor = {name: `${author.name.first} ${author.name.last}`, count: 0};
+     const {name:{first, last},count} = author
+      let theAuthor = {name: `${first} ${last}`, count: 0};
        books.forEach((book) => {
         if(book.authorId === author.id) theAuthor.count += book.borrows.length;
           });
