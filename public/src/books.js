@@ -16,9 +16,9 @@ function partitionBooksByBorrowedStatus(books){
     books.forEach((book) => {
       let currentStatus = book.borrows.filter((borrow) => {
         if(!borrow.returned) return borrow;
-      })
-      currentStatus.length > 0 ? stillBorrowed.push(book) : returnedBorrows.push(book)
-    })
+      });
+      currentStatus.length > 0 ? stillBorrowed.push(book) : returnedBorrows.push(book);
+    });
   return [stillBorrowed, returnedBorrows];
 }
 
