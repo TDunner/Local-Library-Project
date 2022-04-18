@@ -23,7 +23,7 @@ function getBooksBorrowedCount(books){
   return bookBorrCount.length;
 }
 
-// Helper Function for 4, 5 & 6 - done using .sort() & .slice()*
+// Helper Function for 4, 5 & 6 - done using .sort(), turanary operators & .slice()*
 function topFive(array) {
   let theTopFive = array.sort((itemA, itemB) => (itemA.count < itemB.count ? 1 : -1)).slice(0, 5);
     return theTopFive; 
