@@ -53,7 +53,7 @@ function getMostPopularBooks(books) {
 function getMostPopularAuthors(books, authors) {
   var mostPopAuth = [];
     authors.forEach((author) => {
-     const {name:{first, last},count} = author
+     const {name:{first, last}, count} = author;
       let theAuthor = {name: `${first} ${last}`, count: 0};
        books.forEach((book) => {
         if(book.authorId === author.id) theAuthor.count += book.borrows.length;
