@@ -23,13 +23,13 @@ function getBooksBorrowedCount(books){
   return bookBorrCount.length;
 }
 
-// Helper Function for 4, 5 & 6 - done using .sort(), turanary operators & .slice()*
+// Helper Function for 4, 5 & 6 - done using .sort(), ternary operators & .slice()*
 function topFive(array) {
-  let theTopFive = array.sort((itemA, itemB) => (itemA.count < itemB.count ? 1 : -1)).slice(0, 5);
+  let theTopFive = array.sort((itemA, itemB) => itemB.count - itemA.count).slice(0, 5);
     return theTopFive; 
 }
 
-// 4. Get Most Common Genres - done using .map(), .findIndex(), turnary opertors & helper function*
+// 4. Get Most Common Genres - done using .map(), .findIndex(), ternary opertors & helper function*
 function getMostCommonGenres(books){
   const allGenres = books.map((book) => book.genre);
     var mostCommGenres = [];
